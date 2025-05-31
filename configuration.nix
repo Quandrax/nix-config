@@ -4,7 +4,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
@@ -43,13 +43,6 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
   
-  services.displayManager = {
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-    defaultSession = "hyprland";
-  };
   programs.hyprland.enable = true;
 
   # Configure keymap in X11
@@ -71,7 +64,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
+  nixpkgs.config.allowUnfree = true;
   users.users.drax = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
@@ -79,8 +72,6 @@
     ];
   };
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
   ];
 
@@ -124,6 +115,6 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 }
 
