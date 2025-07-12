@@ -9,7 +9,7 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+    
   boot.loader = {
     grub = {
       enable = true;
@@ -44,7 +44,7 @@
   # services.xserver.enable = true;
   
   programs.hyprland.enable = true;
-
+  programs.steam.enable = true;
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -52,7 +52,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # services.pulseaudio.enable = true;
+  #services.pulseaudio.enable = true;
   # OR
   security.rtkit.enable = true;
   services.pipewire = {
@@ -61,7 +61,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
+ 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -72,9 +72,9 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
+  environment.systemPackages = with pkgs; [];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -92,6 +92,7 @@
   networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];
   networking.firewall.enable = true;
+  networking.nftables.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

@@ -12,7 +12,7 @@
 
       exec-once = [
         "hyprpaper"
-        "eww"
+        "waybar"
       ];
  
       general = {

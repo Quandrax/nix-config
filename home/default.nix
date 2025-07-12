@@ -12,6 +12,7 @@
     ./modules/programs.nix
     ./modules/rofi.nix
     ./modules/xdg.nix
+    ./modules/waybar.nix
     ./modules/zed.nix
   ];
 }
