@@ -6,12 +6,12 @@
 
   imports = [
     ./modules/bash.nix
-    ./modules/eww.nix
     ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/hyprland.nix
     ./modules/programs.nix
     ./modules/rofi.nix
     ./modules/xdg.nix
+    ./modules/zed.nix
   ];
 }
