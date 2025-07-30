@@ -86,7 +86,7 @@
 
     #custom-power { color: #f8f8f2; padding-left: 14px; padding-right: 14px; }
     #custom-logo { color: #5277C3; margin-left: 0; }
-    #taskbar {}
+    #taskbar { padding: 0; }
     #window { color: #fffafa; }
     #network { color: #8be9fd; }
     #cpu { color: #ffb86c; }

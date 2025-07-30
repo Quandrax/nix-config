@@ -7,5 +7,9 @@
   home.packages = with pkgs; [
     discord
     brightnessctl
+    rust-analyzer
+    cargo
+    rustc
+    rustfmt
   ];
 }
