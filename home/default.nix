@@ -11,7 +11,7 @@
     ./modules/hyprland.nix
     ./modules/programs.nix
     ./modules/rofi.nix
-    ./modules/xdg.nix
+#   ./modules/xdg.nix
     ./modules/waybar.nix
     ./modules/zed.nix
   ];
