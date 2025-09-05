@@ -42,9 +42,11 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  
+
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+
   programs.hyprland.enable = true;
-  programs.steam.enable = true;
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -74,9 +76,7 @@
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
-  environment.systemPackages = with pkgs; [
-    alsa-utils
-];
+  environment.systemPackages = with pkgs; [];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
