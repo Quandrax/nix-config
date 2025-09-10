@@ -1,5 +1,3 @@
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 {
@@ -11,6 +9,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
     
   boot.loader = {
+    timeout = 60;
     grub = {
       enable = true;
       device = "nodev";
@@ -43,19 +42,13 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.ly.enable = true;
 
   programs.hyprland.enable = true;
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  #services.pulseaudio.enable = true;
-  # OR
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

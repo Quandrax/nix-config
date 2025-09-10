@@ -5,14 +5,12 @@
   home.stateVersion = "25.05";
 
   imports = [
-    ./modules/bash.nix
     ./modules/ghostty.nix
-    ./modules/git.nix
+    ./modules/helix.nix
     ./modules/hyprland.nix
     ./modules/programs.nix
     ./modules/rofi.nix
 #   ./modules/xdg.nix
     ./modules/waybar.nix
-    ./modules/zed.nix
   ];
 }

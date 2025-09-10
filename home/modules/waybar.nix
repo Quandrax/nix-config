@@ -10,8 +10,8 @@
         position = "top";
         height = 30;
         modules-center = [ "hyprland/window"  ];
-        modules-left = [ "custom/logo" "custom/power" "wlr/taskbar" ];
-        modules-right = [ "network" "cpu" "memory" "battery" "wireplumber" "clock" ];  
+        modules-left = [ "custom/logo" "wlr/taskbar" ];
+        modules-right = [ "network" "cpu" "memory" "wireplumber" "clock" ];  
   
         "network" = {
             format-wifi = "  Connected";
@@ -22,9 +22,7 @@
         "cpu" = {
           format = " {usage}%";
         };
-        "battery" = {
-          format = " {capacity}%";
-        };
+        # "memory" = {  };
         "wireplumber" = {
            format = " {volume}%";
            scroll-step = 2;
@@ -37,8 +35,7 @@
           format = "{icon}";
           icon-size = 15;
         };
-        "custom/logo" = { format = " "; };
-        "custom/power" = { format = ""; };      
+        "custom/logo" = { format = " "; };   
       };
     };
   
@@ -63,8 +60,6 @@
       padding: 0;
     }    
 
-
-    #custom-power,
     #custom-logo,
     #taskbar,
     #window,
@@ -84,19 +79,14 @@
       transition: none;
     }
 
-    #custom-power { color: #f8f8f2; padding-left: 14px; padding-right: 14px; }
     #custom-logo { color: #5277C3; margin-left: 0; }
     #taskbar { padding: 0; }
     #window { color: #fffafa; }
     #network { color: #8be9fd; }
     #cpu { color: #ffb86c; }
     #memory { color: #a18bd1; }
-    #battery { color: #50fa7b; }
     #wireplumber { color: #ff79c6; }
-    #clock { 
-      color: #bfbfbf;
-      margin-right: 0;  
-    }
+    #clock { color: #bfbfbf; margin-right: 0; }
     '';
   };
 }
