@@ -12,5 +12,6 @@
     ./modules/rofi.nix
 #   ./modules/xdg.nix
     ./modules/waybar.nix
+    ./modules/yazi.nix
   ];
 }
