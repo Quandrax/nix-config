@@ -22,7 +22,7 @@
     };
   };
 
-  networking.hostName = "bread";
+  networking.hostName = "blyat";
   networking.networkmanager.enable = true;  
 
   time.timeZone = "Europe/Berlin";
