@@ -10,7 +10,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.bread = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.blyat = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
