@@ -22,7 +22,10 @@
         "cpu" = {
           format = " {usage}%";
         };
-        # "memory" = {  };
+        "memory" = {
+          format = " {used}GiB";
+          tooltip = true;
+        };
         "wireplumber" = {
            format = " {volume}%";
            scroll-step = 2;
@@ -35,7 +38,10 @@
           format = "{icon}";
           icon-size = 15;
         };
-        "custom/logo" = { format = " "; };   
+        "custom/logo" = {
+          format = " ";
+          tooltip = false;
+        };   
       };
     };
   
