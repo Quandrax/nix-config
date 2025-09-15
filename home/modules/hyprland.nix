@@ -111,8 +111,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "/etc/nixos/home/modules/lumi.png" ];
-      wallpaper = [ ",/etc/nixos/home/modules/lumi.png" ];      
+      preload = [ "/home/drax/NixOS/home/modules/lumi.png" ];
+      wallpaper = [ ",/home/drax/NixOS/home/modules/lumi.png" ];      
     };
   };
 }
