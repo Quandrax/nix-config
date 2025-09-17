@@ -10,7 +10,7 @@
         position = "top";
         height = 30;
         modules-center = [ "hyprland/window"  ];
-        modules-left = [ "custom/logo" "wlr/taskbar" ];
+        modules-left = [ "custom/logo" "hyprland/workspaces" "wlr/taskbar" ];
         modules-right = [ "network" "cpu" "memory" "wireplumber" "clock" ];  
   
         "network" = {
@@ -27,17 +27,31 @@
           tooltip = true;
         };
         "wireplumber" = {
-           format = " {volume}%";
+           format = " {volume}%";
            scroll-step = 2;
         };
         "clock" = {
           format = " {:%a %d.%m %H:%M}";
           tooltip-format = "{:%A, %d. %B %Y\n%H:%M:%S}";
         };
+
         "wlr/taskbar" = {
           format = "{icon}";
           icon-size = 15;
         };
+        "hyprland/workspaces" = {
+          format = "{icon}";
+        	format-icons = {
+		        active = "";
+			      default = "";
+		      };
+          persistent-workspaces = {
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+          };          
+        };       
         "custom/logo" = {
           format = " ";
           tooltip = false;
@@ -69,6 +83,7 @@
     #custom-logo,
     #taskbar,
     #window,
+    #workspaces,
     #network,
     #cpu,
     #memory,
@@ -85,13 +100,19 @@
       transition: none;
     }
 
-    #custom-logo { color: #5277C3; margin-left: 0; }
+    #workspaces button.active {
+      color: #fff;
+      background-color: #5294e2;
+    }
+    #workspaces button { color: #5277C3; }
+    #workspaces { padding: 0; }
+    #custom-logo { color: #5277C3; margin-left: 0; font-size: 15px; }
     #taskbar { padding: 0; }
     #window { color: #fffafa; }
     #network { color: #8be9fd; }
     #cpu { color: #ffb86c; }
     #memory { color: #a18bd1; }
-    #wireplumber { color: #ff79c6; }
+    #wireplumber { color: #9ff556; }
     #clock { color: #bfbfbf; margin-right: 0; }
     '';
   };

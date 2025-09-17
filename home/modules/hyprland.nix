@@ -11,7 +11,6 @@
       "$menu" = "rofi -show drun"; 
 
       exec-once = [
-        "hyprpaper"
         "waybar"
       ];
  
@@ -68,12 +67,6 @@
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
         "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
 
         "$mod, left, swapwindow, l"
         "$mod, right, swapwindow, r"
@@ -88,8 +81,10 @@
         "$mod, mouse_up, workspace, e-1"
         "$mod, mouse_down, workspace, e+1"
 
-        "SUPER_SHIFT, 1, movetoworkspacesilent, -1"
-        "SUPER_SHIFT, 2, movetoworkspacesilent, +1"     
+        "SUPER_SHIFT, 1, movetoworkspacesilent, 1"
+        "SUPER_SHIFT, 2, movetoworkspacesilent, 2"
+        "SUPER_SHIFT, 3, movetoworkspacesilent, 3"
+        "SUPER_SHIFT, 4, movetoworkspacesilent, 4" 
       ];
 
       bindm = [
