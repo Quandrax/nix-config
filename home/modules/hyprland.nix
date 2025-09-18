@@ -10,9 +10,7 @@
       "$terminal" = "ghostty";
       "$menu" = "rofi -show drun"; 
 
-      exec-once = [
-        "waybar"
-      ];
+      exec-once = [ ];
  
       general = {
         "gaps_in" = "5";
