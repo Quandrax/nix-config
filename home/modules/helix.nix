@@ -5,7 +5,8 @@
     enable = true;
 
     settings = {
-      theme = "adwaita-dark";
+      #theme = "adwaita-dark";
+      theme = "base16_transparent";
     };
   };
 }

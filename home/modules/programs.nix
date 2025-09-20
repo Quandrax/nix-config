@@ -3,7 +3,8 @@
 {
   programs.firefox.enable = true;
   programs.btop.enable = true;
-  programs.vesktop.enable = true;
+  #Vesktop doesnt support global keybinds yet, stick to discord for now
+  #programs.vesktop.enable = true;
   programs.fastfetch.enable = true;
 
   programs.bash = {
@@ -21,5 +22,7 @@
     nil
     brightnessctl
     pavucontrol
+    discord
+    hyprshot
   ];
 }

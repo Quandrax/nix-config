@@ -4,6 +4,8 @@
   home.homeDirectory = "/home/drax";
   home.stateVersion = "25.05";
 
+  services.mako.enable = true;
+
   imports = [
     ./modules/ghostty.nix
     ./modules/helix.nix

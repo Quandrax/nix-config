@@ -82,7 +82,9 @@
         "SUPER_SHIFT, 1, movetoworkspacesilent, 1"
         "SUPER_SHIFT, 2, movetoworkspacesilent, 2"
         "SUPER_SHIFT, 3, movetoworkspacesilent, 3"
-        "SUPER_SHIFT, 4, movetoworkspacesilent, 4" 
+        "SUPER_SHIFT, 4, movetoworkspacesilent, 4"
+
+        "SUPER_SHIFT, S, exec, hyprshot -m output --clipboard-only"
       ];
 
       bindm = [
