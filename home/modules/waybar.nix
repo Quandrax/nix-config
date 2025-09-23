@@ -114,7 +114,7 @@
     #cpu { color: #ffb86c; }
     #memory { color: #a18bd1; }
     #wireplumber { color: #9ff556; }
-    #clock { color: #bfbfbf; margin-right: 0; }
+    #clock { color: #ededed; margin-right: 0; }
     '';
   };
 }

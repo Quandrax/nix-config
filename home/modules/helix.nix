@@ -7,6 +7,9 @@
     settings = {
       #theme = "adwaita-dark";
       theme = "base16_transparent";
+      editor.lsp = {
+        display-inlay-hints = true;
+      };
     };
   };
 }

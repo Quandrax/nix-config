@@ -24,8 +24,8 @@
   
   hardware.firmware = [ ( pkgs.writeTextDir "/lib/firmware/hda-jack-retask.fw" ( builtins.readFile ./hda-jack-retask.fw ) ) ];
   boot.extraModprobeConfig = ''
-  options snd-hda-intel patch=hda-jack-retask.fw
-'';
+    options snd-hda-intel patch=hda-jack-retask.fw
+  '';
 
   networking.hostName = "blyat";
   networking.networkmanager.enable = true;  
@@ -46,7 +46,6 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
   programs.hyprland.enable = true;
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
