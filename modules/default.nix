@@ -71,7 +71,9 @@
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    mullvad-vpn
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -89,7 +91,10 @@
   networking.firewall.allowedUDPPorts = [];
   networking.firewall.enable = true;
   networking.nftables.enable = true;
-
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+  };
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.

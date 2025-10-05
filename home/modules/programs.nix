@@ -6,7 +6,7 @@
   #Vesktop doesnt support global keybinds yet, stick to discord for now
   #programs.vesktop.enable = true;
   programs.fastfetch.enable = true;
-#  programs.obs-studio.enable = true;
+  #programs.obs-studio.enable = true;
 
   programs.bash = {
     enable = true;
