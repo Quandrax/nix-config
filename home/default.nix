@@ -10,7 +10,6 @@
     ./modules/ghostty.nix
     ./modules/helix.nix
     ./modules/hyprland.nix
-    ./modules/neovim.nix
     ./modules/programs.nix
     ./modules/rofi.nix
 #    ./modules/xdg.nix
