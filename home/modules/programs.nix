@@ -25,5 +25,7 @@
     pavucontrol
     discord
     hyprshot
+    hyprpicker
+    aseprite
   ];
 }
