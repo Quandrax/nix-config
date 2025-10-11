@@ -19,6 +19,10 @@
     userEmail = "128057564+Quandrax@users.noreply.github.com";
   };
 
+  programs.lazygit = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     nil
     brightnessctl
