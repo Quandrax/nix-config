@@ -2,7 +2,7 @@
 {
   home.username = "drax";
   home.homeDirectory = "/home/drax";
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   services.mako.enable = true;
 
@@ -12,7 +12,6 @@
     ./modules/hyprland.nix
     ./modules/programs.nix
     ./modules/rofi.nix
-#    ./modules/xdg.nix
     ./modules/waybar.nix
     ./modules/yazi.nix
   ];

@@ -3,7 +3,6 @@
 {
   programs.firefox.enable = true;
   programs.btop.enable = true;
-  #Vesktop doesnt support global keybinds yet, stick to discord for now
   #programs.vesktop.enable = true;
   programs.fastfetch.enable = true;
   #programs.obs-studio.enable = true;
@@ -19,17 +18,11 @@
     userEmail = "128057564+Quandrax@users.noreply.github.com";
   };
 
-  programs.lazygit = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
     nil
-    brightnessctl
     pavucontrol
     discord
     hyprshot
     hyprpicker
-    aseprite
   ];
 }

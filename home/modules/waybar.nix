@@ -11,7 +11,7 @@
         position = "top";
         height = 30;
         modules-center = [ "hyprland/window"  ];
-        modules-left = [ "custom/logo" "hyprland/workspaces" "wlr/taskbar" ];
+        modules-left = [ "custom/logo" "hyprland/workspaces" ];
         modules-right = [ "network" "cpu" "memory" "wireplumber" "clock" ];  
   
         "network" = {
@@ -34,11 +34,6 @@
         "clock" = {
           format = " {:%a %d.%m %H:%M}";
           tooltip-format = "{:%A, %d. %B %Y\n%H:%M:%S}";
-        };
-
-        "wlr/taskbar" = {
-          format = "{icon}";
-          icon-size = 15;
         };
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -82,7 +77,6 @@
     }    
 
     #custom-logo,
-    #taskbar,
     #window,
     #workspaces,
     #network,
@@ -108,7 +102,6 @@
     #workspaces button { color: #5277C3; }
     #workspaces { padding: 0; }
     #custom-logo { color: #5277C3; margin-left: 0; font-size: 15px; }
-    #taskbar { padding: 0; }
     #window { color: #fffafa; }
     #network { color: #8be9fd; }
     #cpu { color: #ffb86c; }

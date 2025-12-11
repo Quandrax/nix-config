@@ -5,9 +5,9 @@
     enable = true;
 
     settings = {
-      #theme = "adwaita-dark";
+      theme = "adwaita-dark";
       #theme = "base16_transparent";
-      theme = "blyat";
+      #theme = "blyat";
       editor.lsp = {
         display-inlay-hints = true;
       };
