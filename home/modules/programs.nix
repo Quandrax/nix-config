@@ -5,8 +5,8 @@
   programs.btop.enable = true;
   programs.vesktop.enable = true;
   programs.fastfetch.enable = true;
-  programs.zed-editor.enable = true;
   programs.obs-studio.enable = true;
+  programs.lazygit.enable = true;
 
   programs.bash = {
     enable = true;

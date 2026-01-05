@@ -8,24 +8,29 @@
     settings = ''
         exec-once=waybar & swww-daemon
 
+        borderpx=2
+        focuscolor=0x00ff99ee
+        maximizescreencolor=0xf9f9f9cc
+
         border_radius=8
         enable_hotarea=0
         new_is_master=0
         scroller_focus_center=1
+        edge_scroller_pointer_focus=0
 
         bind=SUPER,q,spawn,ghostty
         bind=SUPER,r,spawn,rofi -show drun
         bind=SUPER,c,killclient
 
-        bind=SUPER+SHIFT,Left,focusdir,left
-        bind=SUPER+SHIFT,Right,focusdir,right
-        bind=SUPER+SHIFT,Up,focusdir,up
-        bind=SUPER+SHIFT,Down,focusdir,down
+        bind=SUPER,Left,focusdir,left
+        bind=SUPER,Right,focusdir,right
+        bind=SUPER,Up,focusdir,up
+        bind=SUPER,Down,focusdir,down
 
-        bind=SUPER,Left,exchange_client,left
-        bind=SUPER,Right,exchange_client,right
-        bind=SUPER,Up,exchange_client,up
-        bind=SUPER,Down,exchange_client,down
+        bind=SUPER+SHIFT,Left,exchange_client,left
+        bind=SUPER+SHIFT,Right,exchange_client,right
+        bind=SUPER+SHIFT,Up,exchange_client,up
+        bind=SUPER+SHIFT,Down,exchange_client,down
 
         bind=SUPER,f,togglemaximizescreen
         bind=SUPER,o,toggleoverview
