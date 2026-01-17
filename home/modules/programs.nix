@@ -5,7 +5,6 @@
   programs.btop.enable = true;
   programs.vesktop.enable = true;
   programs.fastfetch.enable = true;
-  programs.obs-studio.enable = true;
   programs.lazygit.enable = true;
 
   programs.bash = {
@@ -22,10 +21,6 @@
       }; 
     };
   };
-
-  #programs.lazygit = {
-  #  enable = true;
-  #};
 
   home.packages = with pkgs; [
     unzip
