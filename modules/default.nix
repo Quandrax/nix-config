@@ -1,26 +1,28 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-  boot.loader = {
-    timeout = 60;
-    grub = {
-      enable = true;
-      device = "nodev";
-      efiSupport = true;
-      useOSProber = true;
-    };
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
-    };
-  };
+  # Fixes headset input
+  hardware.firmware = [
+    (pkgs.writeTextDir "/lib/firmware/hda-jack-retask.fw" (builtins.readFile ./hda-jack-retask.fw))
+  ];
+
+  boot.loader.timeout = 60;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Blyat";
   networking.networkmanager.enable = true;
@@ -33,19 +35,28 @@
 
   i18n.defaultLocale = "de_DE.UTF-8";
   console = {
-  #   font = "Lat2-Terminus16";
+    #   font = "Lat2-Terminus16";
     keyMap = "de";
-  #   useXkbConfig = true; # use xkb.options in tty.
+    #   useXkbConfig = true; # use xkb.options in tty.
   };
-
-  programs.mango.enable = true;
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
+  services.displayManager.ly.enable = true;
+  programs.niri.enable = true;
+  programs.fish.enable = true;
+  #services = {
+  #  desktopManager.plasma6.enable = true;
+  #  displayManager.sddm.enable = true;
+  #  displayManager.sddm.wayland.enable = true;
+  #};
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
+
+  # Enable CUPS to print documents.
+  # services.printing.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -55,28 +66,25 @@
     pulse.enable = true;
   };
 
+  # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
 
   users.users.drax = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "video"
+    ];
+    shell = pkgs.fish;
+    packages = [
+      pkgs.pavucontrol
+      pkgs.alacritty
+    ];
   };
 
-  environment.systemPackages = with pkgs; [];
-
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
-
-  networking = {
-   firewall = {
-      enable = true;
-      allowedTCPPorts = [];
-      allowedUDPPorts = [];
-    };
-    nftables.enable = true;
-  };
+  environment.systemPackages = [ ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -86,8 +94,19 @@
   #   enableSSHSupport = true;
   # };
 
+  # List services that you want to enable:
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  networking = {
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ ];
+    };
+    nftables.enable = true;
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
@@ -111,5 +130,5 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }

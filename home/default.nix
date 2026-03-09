@@ -5,16 +5,18 @@
   home.homeDirectory = "/home/drax";
   home.stateVersion = "25.11";
 
-  services.mako.enable = true;
+  programs.nushell.enable = true;
 
   imports = [
-    ./modules/ghostty.nix
-    ./modules/helix.nix
-    ./modules/desktop.nix
+    #    ./modules/ghostty.nix
+    #    ./modules/helix.nix
+    #    ./modules/desktop.nix
+    ./modules/niri
     ./modules/programs.nix
-    ./modules/rofi.nix
-    ./modules/waybar.nix
-    ./modules/yazi.nix
-    ./modules/zellij.nix
+    ./modules/ghostty.nix
+    #    ./modules/rofi.nix
+    #    ./modules/waybar.nix
+    #    ./modules/yazi.nix
+    #    ./modules/zellij.nix
   ];
 }
