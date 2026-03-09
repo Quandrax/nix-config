@@ -5,7 +5,6 @@
   programs.btop.enable = true;
   programs.vesktop.enable = true;
   programs.fastfetch.enable = true;
-  programs.lazygit.enable = true;
 
   programs.bash = {
     enable = true;
