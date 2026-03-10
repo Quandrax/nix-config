@@ -4,18 +4,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nix-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mango = {
       url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nix-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nix-unstable, home-manager, mango, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango }@inputs: {
     nixosConfigurations = {
 
       Blyat = nixpkgs.lib.nixosSystem {

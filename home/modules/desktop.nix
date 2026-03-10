@@ -6,7 +6,7 @@
     systemd.enable = true;
 
     settings = ''
-        exec-once=waybar & swww-daemon
+        exec-once=swww-daemon
 
         borderpx=2
         focuscolor=0x00ff99ee

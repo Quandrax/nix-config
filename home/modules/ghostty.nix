@@ -3,7 +3,6 @@
 {
   programs.ghostty = {
     enable = true;
-    enableBashIntegration = true;
     settings = {
       theme = "0x96f";
       background-opacity = 0.8;
@@ -15,12 +14,11 @@
 
   programs.broot = {
     enable = true;
-    enableBashIntegration = true;
   };
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
     
     settings = {    
       format = lib.concatStrings [

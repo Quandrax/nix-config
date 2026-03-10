@@ -5,12 +5,18 @@
   programs.btop.enable = true;
   programs.vesktop.enable = true;
   programs.fastfetch.enable = true;
+  programs.obs-studio.enable = true;
 
-  programs.bash = {
+  programs.zed-editor = {
     enable = true;
-    enableCompletion = true;
+    extensions = [ "nix" ];
+    extraPackages = [ pkgs.nil ];
+    userSettings = {
+      features.copilot = false;
+      telemetry.metrics = false;
+    };
   };
-
+  
   programs.git = {
     enable = true;
     settings = {
@@ -23,5 +29,7 @@
 
   home.packages = with pkgs; [
     unzip
+    pavucontrol
+    nil
   ];
 }

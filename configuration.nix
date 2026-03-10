@@ -35,12 +35,11 @@
 
   i18n.defaultLocale = "de_DE.UTF-8";
   console = {
-  #   font = "Lat2-Terminus16";
+    #   font = "Lat2-Terminus16";
     keyMap = "de";
-  #   useXkbConfig = true; # use xkb.options in tty.
+    #   useXkbConfig = true; # use xkb.options in tty.
   };
 
-  # Enable the X11 windowing system.
   # services.xserver.enable = true;
   services.displayManager.ly.enable = true;
   programs.mango.enable = true;
@@ -63,7 +62,7 @@
 
   # services.libinput.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   users.users.drax = {
     isNormalUser = true;
@@ -74,7 +73,7 @@
       "video"
     ];
     shell = pkgs.fish;
-    packages = [];
+    packages = [ ];
   };
 
   environment.systemPackages = [ ];
