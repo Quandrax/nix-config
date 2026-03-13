@@ -15,11 +15,6 @@
     "flakes"
   ];
 
-  # Fixes headset input
-  hardware.firmware = [
-    (pkgs.writeTextDir "/lib/firmware/hda-jack-retask.fw" (builtins.readFile ./hda-jack-retask.fw))
-  ];
-
   boot.loader.timeout = 60;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -62,7 +57,9 @@
 
   # services.libinput.enable = true;
 
-  # nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
 
   users.users.drax = {
     isNormalUser = true;
