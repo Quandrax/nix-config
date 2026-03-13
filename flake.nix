@@ -5,6 +5,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,25 +16,39 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango }@inputs: {
-    nixosConfigurations = {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      nixos-hardware,
+      home-manager,
+      mango,
+    }@inputs:
+    {
+      nixosConfigurations = {
 
-      Blyat = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        Blyat = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
 
-        modules = [
-          ./configuration.nix
-          mango.nixosModules.mango
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.drax.imports = [ ./home mango.hmModules.mango ];
-          }
-        ];
+          modules = [
+            ./modules
+            nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
+            mango.nixosModules.mango
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.drax.imports = [
+                ./home
+                mango.hmModules.mango
+              ];
+            }
+          ];
+        };
+
       };
-
     };
-  };
 
 }
