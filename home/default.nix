@@ -5,16 +5,15 @@
   home.homeDirectory = "/home/drax";
   home.stateVersion = "25.11";
 
-  services.mako.enable = true;
-
   imports = [
-    ./modules/ghostty.nix
-    ./modules/helix.nix
     ./modules/desktop.nix
+    ./modules/editor.nix
+    ./modules/ghostty.nix
+    ./modules/mako.nix
     ./modules/programs.nix
     ./modules/rofi.nix
+    ./modules/vesktop.nix
     ./modules/waybar.nix
     ./modules/yazi.nix
-    ./modules/zellij.nix
   ];
 }

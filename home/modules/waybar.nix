@@ -3,7 +3,8 @@
 {
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    #For some reason doesnt work
+    #systemd.enable = true;
 
     settings = {
       mainBar = {
