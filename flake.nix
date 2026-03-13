@@ -33,7 +33,7 @@
           specialArgs = { inherit inputs; };
 
           modules = [
-            ./modules
+            ./hosts/laptop
             nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
             mango.nixosModules.mango
             home-manager.nixosModules.home-manager
