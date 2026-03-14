@@ -19,8 +19,8 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    
-    settings = {    
+
+    settings = {
       format = lib.concatStrings [
         "$directory"
         "$git_branch"
@@ -46,14 +46,14 @@
       git_metrics = {
         disabled = false;
       };
-      
+
       directory = {
         truncate_to_repo = false;
       };
 
       character = {
-       # format = "[ ](bright-green)";
-       # format = "[> ](bright-green)";
+        # format = "[ ](bright-green)";
+        # format = "[> ](bright-green)";
       };
 
       rust = {
@@ -63,9 +63,55 @@
       zig = {
         symbol = " ";
         format = "[$symbol($version )]($style)";
-      };      
-        
+      };
+
+    };
+  };
+
+  home.file.".local/share/fastfetch/logos/nixlogo.png".source = ./nixlogo.png;
+  programs.fastfetch = {
+    enable = true;
+    settings = {
+      logo = {
+        source = "nixlogo.png";
+        width = 40;
+        #height = 20;
+      };
+      display = {
+        size = {
+          binaryPrefix = "si";
+        };
+        color = "blue";
+        separator = ": ";
+      };
+
+      modules = [
+        "title"
+        "separator"
+        "os"
+        "host"
+        "kernel"
+        "uptime"
+        "packages"
+        "shell"
+        "display"
+        "de"
+        "wm"
+        "wmtheme"
+        "theme"
+        "icons"
+        "font"
+        "cursor"
+        "terminal"
+        "terminalfont"
+        "cpu"
+        "gpu"
+        "memory"
+        "disk"
+        "battery"
+        "locale"
+        "colors"
+      ];
     };
   };
 }
-

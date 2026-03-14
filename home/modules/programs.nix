@@ -3,7 +3,6 @@
 {
   programs.firefox.enable = true;
   programs.btop.enable = true;
-  programs.fastfetch.enable = true;
   programs.obs-studio.enable = true;
   programs.nushell.enable = true;
 
