@@ -17,6 +17,8 @@
   };
 
   home.packages = with pkgs; [
+    grim
+    slurp
     brightnessctl
     unzip
     pavucontrol
