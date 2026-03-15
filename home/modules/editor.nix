@@ -24,6 +24,8 @@
         metrics = false;
       };
       helix_mode = true;
+      diagnostics.inline.enabled = true;
+      inlay_hints.enabled = true;
     };
   };
 }
