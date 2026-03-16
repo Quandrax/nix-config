@@ -34,6 +34,6 @@
     brightnessctl
     unzip
     pavucontrol
-    nil
+    nixd
   ];
 }
