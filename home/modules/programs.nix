@@ -5,6 +5,10 @@
   programs.btop.enable = true;
   programs.obs-studio.enable = true;
   programs.nushell.enable = true;
+  programs.lazygit = {
+    enable = true;
+    enableFishIntegration = true;
+  };
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -35,5 +39,6 @@
     unzip
     pavucontrol
     nixd
+    prismlauncher
   ];
 }
