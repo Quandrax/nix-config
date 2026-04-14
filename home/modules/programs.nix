@@ -27,7 +27,9 @@
     settings = {
       user = {
         name = "Quandrax";
-        email = "128057564+Quandrax@users.noreply.github.com";
+        email = "Quandrax@noreply.codeberg.org";
+        #github noreply email
+        #email = "128057564+Quandrax@users.noreply.github.com";
       };
     };
   };
