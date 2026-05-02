@@ -13,10 +13,11 @@
         height = 30;
         modules-center = [ "dwl/window"  ];
 
-        modules-left = [ "custom/logo" "dwl/tags" ];
+        modules-left = [ "custom/logo" "ext/workspaces" ];
 
-        "dwl/tags" = {
-          num-tags = "4";
+        "ext/workspaces" = {
+          "on-click" = "activate";
+          "format" = "";
         };
 
         modules-right = [ "network" "cpu" "memory" "wireplumber" "clock" ];
@@ -77,7 +78,7 @@
     #memory,
     #battery,
     #wireplumber,
-    #tags,
+    #workspaces,
     #clock {
       background: #2e3440;
       margin-top: 6px;
@@ -89,12 +90,12 @@
       transition: none;
     }
 
-    #tags button.focused {
+    #workspaces button.active {
       color: #fff;
       background-color: #5294e2;
     }
-    #tags button { color: #5277C3; }
-    #tags { padding: 0; }
+    #workspaces button { color: #5277C3; }
+    #workspaces { padding: 0; }
     #custom-logo { color: #5277C3; margin-left: 0; font-size: 15px; }
     #window { color: #fffafa; }
     #network { color: #8be9fd; }
