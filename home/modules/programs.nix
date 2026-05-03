@@ -42,5 +42,6 @@
     pavucontrol
     nixd
     prismlauncher
+    krita
   ];
 }

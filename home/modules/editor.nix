@@ -15,13 +15,28 @@
 
   programs.zed-editor = {
     enable = true;
-    extensions = [ "nix" "toml" ];
+    extensions = [
+      "nix"
+      "toml"
+      "monokai-vibrant-amped"
+      "assembly"
+      "material-icon-theme"
+      "zig"
+      "slang"
+      "glsl"
+      "slint"
+    ];
     extraPackages = [ pkgs.nil ];
     userSettings = {
       disable_ai = true;
       telemetry = {
         diagnostics = false;
         metrics = false;
+      };
+      theme = {
+        mode = "dark";
+        light = "Ayu Light";
+        dark = "Monokai Vibrant Amped";
       };
       helix_mode = true;
       diagnostics.inline.enabled = true;
