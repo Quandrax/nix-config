@@ -8,18 +8,23 @@
       discordBranch = "stable";
       arRPC = false;
       minimizeToTray = false;
+      tray = false;
+      hardwareAcceleration = true;
+      hardwareVideoAcceleration = true;
+      enableSplashScreen = false;
+      splashTheming = false;
+      autoStartMinimized = false;
+      openLinksWithElectron = false;
+      staticTitle = true;
+      enableMenu = false;
     };
-    #{
-    #"discordBranch": "stable",
-    #"minimizeToTray": false,
-    #"arRPC": false,
-    #"splashColor": "rgb(243, 243, 244)",
-    #"splashBackground": "rgb(44, 45, 50)"
-    #}
 
     vencord.settings = {
       autoUpdate = true;
       autoUpdateNotification = true;
+      winCtrlQ = false;
+      winNativeTitleBar = false;
+      transparent = false;
       useQuickCss = true;
       plugins = {
         AnonymiseFileNames.enabled = true;
