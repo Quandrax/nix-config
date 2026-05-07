@@ -7,6 +7,10 @@
   programs.mango.enable = true;
   programs.fish.enable = true;
 
+#  hardware.opentabletdriver.enable = true;
+#  hardware.uinput.enable = true;
+#  boot.kernelModules = [ "uinput" ];
+
   environment.systemPackages = [ ];
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 }

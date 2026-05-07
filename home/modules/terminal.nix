@@ -3,12 +3,14 @@
 {
   programs.ghostty = {
     enable = true;
+    enableFishIntegration = true;
     settings = {
       theme = "0x96f";
       background-opacity = 0.8;
       font-size = 11;
       window-padding-x = 20;
       window-padding-y = 5;
+      window-padding-color = "extend-always";
     };
   };
 
