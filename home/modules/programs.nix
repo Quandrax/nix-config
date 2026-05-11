@@ -39,7 +39,7 @@
     slurp
     brightnessctl
     unzip
-    pavucontrol
+    pwvucontrol
     nixd
     prismlauncher
     krita

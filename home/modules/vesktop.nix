@@ -10,7 +10,7 @@
       minimizeToTray = false;
       tray = false;
       hardwareAcceleration = true;
-      hardwareVideoAcceleration = true;
+      hardwareVideoAcceleration = false;
       enableSplashScreen = false;
       splashTheming = false;
       autoStartMinimized = false;
