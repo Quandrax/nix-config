@@ -31,6 +31,7 @@
         #github noreply email
         #email = "128057564+Quandrax@users.noreply.github.com";
       };
+      init.defaultBranch = "main";
     };
   };
 
@@ -40,8 +41,7 @@
     brightnessctl
     unzip
     pwvucontrol
-    nixd
-    prismlauncher
+    nil
     krita
   ];
 }
