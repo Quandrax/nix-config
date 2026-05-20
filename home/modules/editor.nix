@@ -27,6 +27,7 @@
       "slint"
     ];
     extraPackages = [ pkgs.nil ];
+
     userSettings = {
       disable_ai = true;
       telemetry = {
@@ -41,6 +42,14 @@
       helix_mode = true;
       diagnostics.inline.enabled = true;
       inlay_hints.enabled = true;
+      languages.Nix.language_servers = [
+        "nil"
+        "!nixd"
+      ];
     };
+
+    mutableUserKeymaps = false;
+    mutableUserSettings = false;
+    mutableUserTasks = false;
   };
 }
