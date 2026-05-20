@@ -41,6 +41,7 @@
     brightnessctl
     unzip
     pwvucontrol
+    mpv
     nil
     krita
   ];
