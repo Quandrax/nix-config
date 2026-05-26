@@ -10,6 +10,14 @@
     enableFishIntegration = true;
   };
   programs.direnv = {
+    config = {
+      whitelist = {
+        prefix = [
+          "/home/drax/Github"
+          "/home/drax/Codeberg"
+        ];
+      };
+    };
     enable = true;
     nix-direnv.enable = true;
   };
@@ -44,5 +52,6 @@
     mpv
     nil
     krita
+    tor-browser
   ];
 }

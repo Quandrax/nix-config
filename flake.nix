@@ -1,11 +1,10 @@
 {
-
   description = "Desktop";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,35 +19,27 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
       nixos-hardware,
       home-manager,
       mango,
     }@inputs:
+    let
+      mkHost = import ./lib/makehost.nix { inherit nixpkgs inputs; };
+    in
     {
-      nixosConfigurations = {
-
-        Blyat = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-
-          modules = [
-            ./hosts/laptop
-            nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
-            mango.nixosModules.mango
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.drax.imports = [
-                ./home
-                mango.hmModules.mango
-              ];
-            }
-          ];
-        };
-
+      nixosConfigurations.Blyat = mkHost "Travel" {
+        system = "x86_64-linux";
+        user = "drax";
+        extraModules = [
+          ./hosts/laptop
+          mango.nixosModules.mango
+          nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
+        ];
+        extraHmModules = [
+          ./home
+          mango.hmModules.mango
+        ];
       };
-    };
 
+    };
 }
