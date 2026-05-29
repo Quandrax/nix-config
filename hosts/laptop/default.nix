@@ -3,6 +3,8 @@
 {
   imports = [ ./hardware-configuration.nix ] ++ (lib.filesystem.listFilesRecursive ../../modules);
 
+  networking.hostName = "Blyat";
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 

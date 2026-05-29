@@ -1,6 +1,5 @@
 { ... }:
 {
-  networking.hostName = "Blyat";
   networking.networkmanager.enable = true;
 
   networking = {
