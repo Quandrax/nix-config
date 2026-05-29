@@ -1,4 +1,5 @@
 { pkgs, ... }:
+
 {
   users.users.drax = {
     isNormalUser = true;

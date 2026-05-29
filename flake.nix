@@ -35,10 +35,7 @@
           mango.nixosModules.mango
           nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
         ];
-        extraHmModules = [
-          ./home
-          mango.hmModules.mango
-        ];
+        extraHmModules = [ mango.hmModules.mango ];
       };
 
     };
