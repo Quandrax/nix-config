@@ -12,6 +12,7 @@
   imports = [
     ./modules/desktop.nix
     ./modules/editor.nix
+    ./modules/firefox.nix
     ./modules/mako.nix
     ./modules/programs.nix
     ./modules/rofi.nix
