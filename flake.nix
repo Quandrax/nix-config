@@ -2,9 +2,17 @@
   description = "Desktop";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-26.05";
+    };
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -24,6 +32,7 @@
       nixos-hardware,
       home-manager,
       mango,
+      ...
     }@inputs:
     let
       mkHost = import ./lib/makehost.nix { inherit nixpkgs inputs; };
