@@ -26,28 +26,5 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      nixos-hardware,
-      home-manager,
-      mango,
-      ...
-    }@inputs:
-    let
-      mkHost = import ./lib/makehost.nix { inherit nixpkgs inputs; };
-    in
-    {
-      nixosConfigurations.Blyat = mkHost "Travel" {
-        system = "x86_64-linux";
-        user = "drax";
-        extraModules = [
-          ./hosts/laptop
-          mango.nixosModules.mango
-          nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
-        ];
-        extraHmModules = [ mango.hmModules.mango ];
-      };
-
-    };
+    inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } { flake = import ./hosts inputs; };
 }
