@@ -46,6 +46,9 @@
         "nil"
         "!nixd"
       ];
+      project_panel = {
+        dock = "left";
+      };
     };
 
     mutableUserKeymaps = false;

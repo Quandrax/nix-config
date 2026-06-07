@@ -3,8 +3,8 @@
 {
   programs.waybar = {
     enable = true;
-    #For some reason doesnt work
-    #systemd.enable = true;
+    systemd.enable = true;
+    systemd.targets = [ "mango-session.target" ];
 
     settings = {
       mainBar = {

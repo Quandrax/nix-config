@@ -5,8 +5,10 @@
     enable = true;
     systemd.enable = true;
 
-    settings = ''
-      exec-once=swww-daemon & waybar
+    # I will migrate one day
+    #settings =
+    extraConfig = ''
+      exec-once=awww-daemon & waybar
 
       borderpx=2
       focuscolor=0x00ff99ee
@@ -54,5 +56,5 @@
     '';
   };
 
-  services.swww.enable = true;
+  services.awww.enable = true;
 }
