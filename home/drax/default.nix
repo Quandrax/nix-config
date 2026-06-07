@@ -38,7 +38,7 @@
   programs.fish.enable = true;
   programs.fish.shellAbbrs = {
     nrs = {
-      expansion = "nixos-rebuild switch --flake ~/NixConfig#Blyat";
+      expansion = "nixos-rebuild switch --flake ~/NixConfig#laptop";
       position = "anywhere";
     };
   };

@@ -20,4 +20,6 @@
 
   # services.libinput.enable = true;
   # services.printing.enable = true;
+
+  system.stateVersion = "26.05";
 }
