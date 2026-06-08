@@ -14,4 +14,7 @@
     enable = true;
     enableFishIntegration = true;
   };
+
+  #remove if update stateVersion
+  programs.yazi.shellWrapperName = "y";
 }

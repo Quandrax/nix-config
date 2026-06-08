@@ -1,6 +1,9 @@
-{ ... }:
+{ config, ... }:
 
 {
+  #remove if update stateVersion
+  programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
+
   programs.firefox = {
     languagePacks = [
       "en-US"
