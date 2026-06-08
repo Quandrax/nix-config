@@ -26,5 +26,11 @@
   };
 
   outputs =
-    inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } { flake = import ./hosts inputs; };
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        ./flake/nixos.nix
+        ./flake/templates.nix
+      ];
+    };
 }

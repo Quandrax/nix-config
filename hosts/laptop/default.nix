@@ -1,7 +1,11 @@
-{ lib, ... }:
+{ inputs, lib, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ] ++ (lib.filesystem.listFilesRecursive ../../modules);
+  imports = [
+    ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
+  ]
+  ++ (lib.filesystem.listFilesRecursive ../../modules);
 
   networking.hostName = "Blyat";
 

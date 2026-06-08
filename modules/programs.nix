@@ -1,6 +1,15 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
+  imports = [
+    inputs.mango.nixosModules.mango
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   programs.mango.enable = true;
@@ -22,9 +31,9 @@
     enable = true;
   };
 
-#  hardware.opentabletdriver.enable = true;
-#  hardware.uinput.enable = true;
-#  boot.kernelModules = [ "uinput" ];
+  #  hardware.opentabletdriver.enable = true;
+  #  hardware.uinput.enable = true;
+  #  boot.kernelModules = [ "uinput" ];
 
   environment.systemPackages = [ ];
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
