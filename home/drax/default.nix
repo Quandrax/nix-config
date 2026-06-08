@@ -52,6 +52,14 @@
       expansion = "nixos-rebuild switch --flake ~/NixConfig#laptop";
       position = "anywhere";
     };
+
+    ntr = {
+      expansion = "nix flake init -t ~/NixConfig#rust";
+    };
+
+    ntz = {
+      expansion = "nix flake init -t ~/NixConfig#zig";
+    };
   };
 
   imports = [
