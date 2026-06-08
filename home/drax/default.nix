@@ -12,14 +12,25 @@
   programs.git = {
     enable = true;
     settings = {
-      user = {
-        name = "Quandrax";
-        email = "Quandrax@noreply.codeberg.org";
-        #github noreply email
-        #email = "128057564+Quandrax@users.noreply.github.com";
-      };
+      user.name = "Quandrax";
       init.defaultBranch = "main";
     };
+    includes = [
+      {
+        condition = "gitdir:~/Codeberg/";
+        contents.user.email = "Quandrax@noreply.codeberg.org";
+      }
+
+      {
+        condition = "gitdir:~/Github/";
+        contents.user.email = "128057564+Quandrax@users.noreply.github.com";
+      }
+
+      {
+        condition = "gitdir:~/NixConfig/";
+        contents.user.email = "128057564+Quandrax@users.noreply.github.com";
+      }
+    ];
   };
 
   programs.direnv = {

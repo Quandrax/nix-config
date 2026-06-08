@@ -7,8 +7,11 @@
 
     # I will migrate one day
     #settings =
+    autostart_sh = ''
+      true
+    '';
     extraConfig = ''
-      exec-once=awww-daemon & waybar
+      exec-once=awww-daemon
 
       borderpx=2
       focuscolor=0x00ff99ee
