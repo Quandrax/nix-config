@@ -9,9 +9,6 @@
 
   networking.hostName = "Blyat";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   # services.libinput.enable = true;
   # services.printing.enable = true;
 

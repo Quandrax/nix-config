@@ -8,6 +8,4 @@
     ];
     auto-optimise-store = true;
   };
-
-  boot.loader.timeout = 60;
 }
