@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   programs.btop.enable = true;
@@ -19,5 +19,6 @@
     nil
     krita
     tor-browser
+    pkgs-unstable.concord-tui
   ];
 }
