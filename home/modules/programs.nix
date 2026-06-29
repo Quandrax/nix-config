@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   programs.btop.enable = true;
@@ -16,9 +16,7 @@
     unzip
     pwvucontrol
     mpv
-    nil
     krita
     tor-browser
-    pkgs-unstable.concord-tui
   ];
 }

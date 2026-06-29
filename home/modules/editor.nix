@@ -11,10 +11,27 @@
         display-inlay-hints = true;
       };
     };
+
+    languages.language = [
+      {
+        name = "nix";
+        auto-format = true;
+        formatter = {
+          command = "nixfmt";
+        };
+      }
+    ];
+
+    extraPackages = [
+      pkgs.nil
+      pkgs.nixfmt
+    ];
+
+    defaultEditor = true;
   };
 
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     extensions = [
       "nix"
       "toml"
