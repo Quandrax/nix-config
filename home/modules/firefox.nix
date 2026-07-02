@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   #remove if update stateVersion
@@ -131,4 +131,7 @@
 
     enable = true;
   };
+
+  home.packages = [ pkgs.tor-browser ];
+
 }

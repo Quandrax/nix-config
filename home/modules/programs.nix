@@ -17,6 +17,5 @@
     pwvucontrol
     mpv
     krita
-    tor-browser
   ];
 }
