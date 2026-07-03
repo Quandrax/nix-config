@@ -12,6 +12,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.nano.enable = false;
   programs.mango.enable = true;
   programs.fish.enable = true;
   programs.bash.enable = false;
