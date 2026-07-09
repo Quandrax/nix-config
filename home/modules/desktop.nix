@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -57,11 +57,25 @@
       bind=SUPER+SHIFT,4,tag,4
 
       bind=SUPER+SHIFT,r,reload_config
-      bind=SUPER+SHIFT,s,switch_layout
+      bind=SUPER+SHIFT,l,switch_layout
+
+      bind=SUPER+SHIFT,s,spawn_shell,grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot" "Press Ctrl+v to paste"
 
       xkb_rules_layout=de
     '';
   };
 
   services.awww.enable = true;
+
+  programs.obs-studio.enable = true;
+  programs.satty.enable = true;
+
+  home.packages = with pkgs; [
+    grim
+    slurp
+    wl-clipboard
+    brightnessctl
+    pwvucontrol
+    mpv
+  ];
 }
