@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   boot.loader = {
@@ -17,4 +17,20 @@
   };
 
   environment.systemPackages = [ pkgs.sbctl ];
+
+  services.greetd = {
+    settings = {
+      default_session = {
+        command = ''
+          ${pkgs.tuigreet}/bin/tuigreet \
+          --time --user-menu --asterisks \
+          --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions \
+          --xsessions ${config.services.displayManager.sessionData.desktops}/share/xsessions
+        '';
+        user = "greeter";
+      };
+    };
+    useTextGreeter = true;
+    enable = true;
+  };
 }
