@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   home = {
@@ -17,17 +17,17 @@
     };
     includes = [
       {
-        condition = "gitdir:~/Codeberg/";
+        condition = "gitdir:~/Projects/Codeberg/";
         contents.user.email = "Quandrax@noreply.codeberg.org";
       }
 
       {
-        condition = "gitdir:~/Github/";
+        condition = "gitdir:~/Projects/Github/";
         contents.user.email = "128057564+Quandrax@users.noreply.github.com";
       }
 
       {
-        condition = "gitdir:~/NixConfig/";
+        condition = "gitdir:~/Projects/NixConfig/";
         contents.user.email = "128057564+Quandrax@users.noreply.github.com";
       }
     ];
@@ -37,8 +37,7 @@
     config = {
       whitelist = {
         prefix = [
-          "/home/drax/Github"
-          "/home/drax/Codeberg"
+          "${config.xdg.userDirs.projects}"
         ];
       };
     };
@@ -49,16 +48,16 @@
   programs.fish.enable = true;
   programs.fish.shellAbbrs = {
     nrs = {
-      expansion = "nixos-rebuild switch --flake ~/NixConfig#laptop";
+      expansion = "nixos-rebuild switch --flake ~/Projects/NixConfig#laptop";
       position = "anywhere";
     };
 
     ntr = {
-      expansion = "nix flake init -t ~/NixConfig#rust";
+      expansion = "nix flake init -t ~/Projects/NixConfig#rust";
     };
 
     ntz = {
-      expansion = "nix flake init -t ~/NixConfig#zig";
+      expansion = "nix flake init -t ~/Projects/NixConfig#zig";
     };
   };
 
@@ -72,6 +71,7 @@
     ../modules/terminal.nix
     ../modules/vesktop.nix
     ../modules/waybar.nix
+    ../modules/xdg.nix
     ../modules/yazi.nix
   ];
 }
