@@ -1,9 +1,10 @@
 { lib, ... }:
 
 {
+  programs.nushell.enable = true;
+
   programs.ghostty = {
     enable = true;
-    enableFishIntegration = true;
     settings = {
       theme = "0x96f";
       background-opacity = 0.8;
@@ -11,12 +12,14 @@
       window-padding-x = 20;
       window-padding-y = 5;
       window-padding-color = "extend-always";
+      shell-integration = "nushell";
+      command = "nu";
     };
   };
 
   programs.starship = {
     enable = true;
-    enableFishIntegration = true;
+    enableNushellIntegration = true;
 
     settings = {
       format = lib.concatStrings [
@@ -65,6 +68,13 @@
 
     };
   };
+
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
+  programs.btop.enable = true;
 
   home.file.".local/share/fastfetch/logos/nixlogo.png".source = ./nixlogo.png;
   programs.fastfetch = {

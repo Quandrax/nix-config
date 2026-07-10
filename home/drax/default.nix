@@ -45,22 +45,6 @@
     nix-direnv.enable = true;
   };
 
-  programs.fish.enable = true;
-  programs.fish.shellAbbrs = {
-    nrs = {
-      expansion = "nixos-rebuild switch --flake ~/Projects/NixConfig#laptop";
-      position = "anywhere";
-    };
-
-    ntr = {
-      expansion = "nix flake init -t ~/Projects/NixConfig#rust";
-    };
-
-    ntz = {
-      expansion = "nix flake init -t ~/Projects/NixConfig#zig";
-    };
-  };
-
   imports = [
     ../modules/desktop.nix
     ../modules/editor.nix

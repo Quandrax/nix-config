@@ -12,7 +12,7 @@
       };
     };
     enable = true;
-    enableFishIntegration = true;
+    enableNushellIntegration = true;
   };
 
   #remove if update stateVersion

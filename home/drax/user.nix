@@ -9,7 +9,5 @@
       "audio"
       "video"
     ];
-    shell = pkgs.fish;
-    packages = [ ];
   };
 }

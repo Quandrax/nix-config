@@ -1,11 +1,9 @@
 { pkgs, ... }:
 
 {
-  programs.btop.enable = true;
-  programs.nushell.enable = true;
   programs.lazygit = {
     enable = true;
-    enableFishIntegration = true;
+    enableNushellIntegration = true;
   };
 
   home.packages = with pkgs; [
