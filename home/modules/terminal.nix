@@ -1,7 +1,20 @@
 { lib, ... }:
 
 {
-  programs.nushell.enable = true;
+  programs.nushell = {
+    settings = {
+      completions.external = {
+        enable = true;
+        max_results = 200;
+      };
+    };
+    enable = true;
+  };
+
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
 
   programs.ghostty = {
     enable = true;
@@ -75,6 +88,11 @@
   };
 
   programs.btop.enable = true;
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   home.file.".local/share/fastfetch/logos/nixlogo.png".source = ./nixlogo.png;
   programs.fastfetch = {

@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   xdg = {
@@ -15,4 +15,6 @@
 
     enable = true;
   };
+
+  programs.direnv.config.whitelist.prefix = [ "${config.xdg.userDirs.projects}" ];
 }
