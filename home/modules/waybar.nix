@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.waybar = {
@@ -6,21 +6,24 @@
     systemd.enable = true;
     systemd.targets = [ "mango-session.target" ];
 
+    package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
     settings = {
       mainBar = {
         layer = "top";
         position = "top";
         height = 30;
-        modules-center = [ "dwl/window" ];
+        modules-center = [ "mango/window" ];
 
         modules-left = [
           "custom/logo"
-          "ext/workspaces"
+          "mango/workspaces"
         ];
 
-        "ext/workspaces" = {
-          "on-click" = "activate";
-          "format" = "";
+        "mango/workspaces" = {
+          on-click = "activate";
+          format = "";
+          hide-empty = true;
         };
 
         modules-right = [
@@ -75,7 +78,7 @@
         padding: 0;
       }
 
-      #mainBar{
+      #mainBar {
         margin: 0;
         padding: 0;
       }
@@ -99,13 +102,20 @@
         transition: none;
       }
 
+      #workspaces {
+        padding: 0;
+        margin-left: 6px;
+      }
       #workspaces button.active {
         color: #fff;
         background-color: #5294e2;
       }
-      #workspaces button { color: #5277C3; }
-      #workspaces { padding: 0; }
-      #custom-logo { color: #5277C3; margin-left: 0; font-size: 15px; }
+      #workspaces button {
+        color: #5277C3;
+        min-width: 30px;
+      }
+
+      #custom-logo { color: #7ebae4; margin-left: 0; }
       #window { color: #fffafa; }
       #network { color: #8be9fd; }
       #cpu { color: #ffb86c; }
