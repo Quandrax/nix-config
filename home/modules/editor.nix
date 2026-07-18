@@ -401,7 +401,7 @@
   };
 
   programs.zed-editor = {
-    enable = true;
+    enable = false;
     defaultEditor = false;
 
     extensions = [
