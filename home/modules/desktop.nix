@@ -15,8 +15,6 @@
       true
     '';
     extraConfig = ''
-      exec-once=awww-daemon
-
       borderpx=2
       focuscolor=0x00ff99ee
       maximizescreencolor=0xf9f9f9cc
