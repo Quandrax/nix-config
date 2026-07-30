@@ -68,6 +68,10 @@
   programs.obs-studio.enable = true;
   programs.satty.enable = true;
 
+  programs.obsidian = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     grim
     slurp

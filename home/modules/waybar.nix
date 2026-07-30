@@ -46,6 +46,7 @@
         "memory" = {
           format = " {used}GiB";
           tooltip = true;
+          max-length = 9;
         };
         "wireplumber" = {
           format = " {volume}%";
