@@ -7,8 +7,13 @@
   ]
   ++ (lib.filesystem.listFilesRecursive ../../modules);
 
-  networking.hostName = "Blyat";
+  networking.hostName = "laptop";
   hardware.enableRedistributableFirmware = true;
+
+  programs.nh = {
+    enable = true;
+    flake = "/home/drax/Projects/NixConfig";
+  };
 
   # services.libinput.enable = true;
   # services.printing.enable = true;
