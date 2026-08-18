@@ -67,6 +67,11 @@
           command = "nixfmt";
         };
       }
+
+      {
+        name = "cpp";
+        auto-format = true;
+      }
     ];
 
     extraPackages = [
