@@ -69,8 +69,21 @@
       }
 
       {
+        name = "c";
+        auto-format = true;
+        formatter = {
+          command = "clang-format";
+          args = [ "-style=Microsoft" ];
+        };
+      }
+
+      {
         name = "cpp";
         auto-format = true;
+        formatter = {
+          command = "clang-format";
+          args = [ "-style=Microsoft" ];
+        };
       }
     ];
 
