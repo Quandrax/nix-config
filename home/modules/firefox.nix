@@ -133,5 +133,4 @@
   };
 
   home.packages = [ pkgs.tor-browser ];
-
 }

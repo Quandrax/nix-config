@@ -11,9 +11,9 @@
 
     # I will migrate one day
     #settings =
-    autostart_sh = ''
-      true
-    '';
+    # autostart_sh = ''
+    #   true
+    # '';
     extraConfig = ''
       borderpx=2
       focuscolor=0x00ff99ee
@@ -66,7 +66,6 @@
   services.awww.enable = true;
 
   programs.obs-studio.enable = true;
-  programs.satty.enable = true;
 
   programs.obsidian = {
     enable = true;
@@ -79,5 +78,6 @@
     brightnessctl
     pwvucontrol
     mpv
+    krita
   ];
 }

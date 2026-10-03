@@ -4,7 +4,8 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    systemd.targets = [ "mango-session.target" ];
+    # systemd.targets = [ "mango-session.target" ];
+    systemd.target = [ "graphical-session.target" ];
 
     package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
