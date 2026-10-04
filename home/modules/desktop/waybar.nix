@@ -5,7 +5,9 @@
     enable = true;
     systemd.enable = true;
     # systemd.targets = [ "mango-session.target" ];
-    systemd.target = [ "graphical-session.target" ];
+    # mango will auto activate graphical-session.
+    # https://github.com/mangowm/mango/commit/e835ca08d054960290524b314803772ebb1353a2
+    systemd.targets = [ "graphical-session.target" ];
 
     package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
 

@@ -10,10 +10,7 @@
     systemd.enable = true;
 
     # I will migrate one day
-    #settings =
-    # autostart_sh = ''
-    #   true
-    # '';
+    # settings =
     extraConfig = ''
       borderpx=2
       focuscolor=0x00ff99ee

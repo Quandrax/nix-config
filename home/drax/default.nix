@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   home = {
@@ -34,27 +34,18 @@
   };
 
   programs.direnv = {
-    config = {
-      whitelist = {
-        prefix = [
-          "${config.xdg.userDirs.projects}"
-        ];
-      };
-    };
     enable = true;
     nix-direnv.enable = true;
   };
 
   imports = [
-    ../modules/desktop.nix
+    ../modules/desktop
     ../modules/editor.nix
     ../modules/firefox.nix
-    ../modules/mako.nix
     ../modules/programs.nix
     ../modules/rofi.nix
     ../modules/terminal.nix
     ../modules/vesktop.nix
-    ../modules/waybar.nix
     ../modules/xdg.nix
     ../modules/yazi.nix
   ];
