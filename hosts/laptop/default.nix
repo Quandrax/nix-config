@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-ideapad-s145-15api
   ]
-  ++ (lib.filesystem.listFilesRecursive ../../modules);
+  ++ (lib.filesystem.listFilesRecursive ../modules);
 
   networking.hostName = "laptop";
   hardware.enableRedistributableFirmware = true;

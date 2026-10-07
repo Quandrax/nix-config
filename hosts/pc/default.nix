@@ -1,7 +1,7 @@
 { lib, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ] ++ (lib.filesystem.listFilesRecursive ../../modules);
+  imports = [ ./hardware-configuration.nix ] ++ (lib.filesystem.listFilesRecursive ../modules);
 
   networking.hostName = "Pc";
 
